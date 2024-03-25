@@ -1,21 +1,16 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk 34
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        ndkVersion rootProject.ext.ndkVersion
-        versionCode 35
-        versionName "1.2.0"
-
+        minSdk 21
+        compileSdk 34
         externalNativeBuild {
             cmake {
-                cppFlags "-std=c++17 -Werror=thread-safety"
+//                cppFlags "-std=c++17 -Werror=thread-safety"
 //                cppFlags "-std=c++11 -frtti -fexceptions -pthread"
 //                cppFlags "-std=c++11 -pthread"
-                arguments "-DANDROID_STL=c++_shared"
+//                arguments "-DANDROID_STL=c++_shared"
 //                arguments "-DANDROID_ARM_NEON=TRUE",'-DANDROID_STL=c++_shared'
 //                abiFilters "armeabi-v7a"
                 abiFilters "armeabi-v7a","arm64-v8a"
@@ -32,12 +27,15 @@ android {
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
-            version "3.18.1"
+            version "3.22.1"
         }
     }
+    buildFeatures{
+        buildConfig true
+    }
     compileOptions {
-        sourceCompatibility = rootProject.ext.javaVersion
-        targetCompatibility = rootProject.ext.javaVersion
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
 
     sourceSets {
@@ -46,16 +44,17 @@ android {
         }
     }
     namespace 'me.devilsen.czxing'
+    ndkVersion '22.1.7171670'
 }
 
 dependencies {
 
-    implementation rootProject.ext.annotation
-    implementation rootProject.ext.appcompat
+    implementation libs.annotation
+    implementation libs.appcompat
 
-    testImplementation rootProject.ext.junit
-    androidTestImplementation rootProject.ext.testrunner
-    androidTestImplementation rootProject.ext.testespresso
+    testImplementation libs.junit
+    androidTestImplementation libs.testrunner
+    androidTestImplementation libs.espresso.core
 }
 
-apply from: "public-maven.gradle"
+//apply from: "public-maven.gradle"

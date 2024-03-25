@@ -1,0 +1,44 @@
+[versions]
+agp = "8.3.1"
+androidMavenGradlePlugin = "2.1"
+crashreport = "4.1.9.3"
+dokkaGradlePlugin = "1.4.10.2"
+gradle = "8.3.1"
+gradleBintrayPlugin = "1.8.4"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.10.0"
+constraintlayout = "2.1.4"
+annotation = "1.6.0"
+permission = "2.0.3"
+nativecrashreport = "3.9.2"
+rxandroid = "2.1.1"
+rxjava = "2.2.21"
+squareupLeakcanaryAndroid = "2.13"
+testrunner = "1.5.2"
+[libraries]
+android-maven-gradle-plugin = { module = "com.github.dcendents:android-maven-gradle-plugin", version.ref = "androidMavenGradlePlugin" }
+annotation = {group = "androidx.annotation", name = "annotation", version.ref = "annotation"}
+com-squareup-leakcanary-leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "squareupLeakcanaryAndroid" }
+crashreport = { module = "com.tencent.bugly:crashreport", version.ref = "crashreport" }
+dokka-gradle-plugin = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokkaGradlePlugin" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+gradle-bintray-plugin = { module = "com.jfrog.bintray.gradle:gradle-bintray-plugin", version.ref = "gradleBintrayPlugin" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+permission = { module = "com.yanzhenjie:permission", version.ref = "permission" }
+nativecrashreport = { module = "com.tencent.bugly:nativecrashreport", version.ref = "nativecrashreport" }
+rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid" }
+rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
+testrunner = { group = "androidx.test", name = "runner", version.ref = "testrunner" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+
